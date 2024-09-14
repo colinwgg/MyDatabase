@@ -12,6 +12,15 @@ import java.util.concurrent.locks.ReentrantLock;
 import com.colinwang.mydatabase.backend.utils.Parser;
 import com.colinwang.mydatabase.common.Error;
 
+/**
+ *
+ * XID file layout:
+ * |Header|xid1Status|xid2Status|xid3Status|...|
+ * |8B    |1B        |1B        |1B        |...|
+ *
+ * @author ColinWang
+ */
+
 public class TransactionManagerImpl implements TransactionManager {
 
     // XID文件头长度
