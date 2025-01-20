@@ -13,10 +13,6 @@ import com.colinwang.mydatabase.backend.utils.Parser;
 import com.colinwang.mydatabase.common.Error;
 import com.google.common.primitives.Bytes;
 
-import top.guoziyang.mydb.backend.utils.Panic;
-import top.guoziyang.mydb.backend.utils.Parser;
-import top.guoziyang.mydb.common.Error;
-
 /**
  * 日志文件读写
  * 
@@ -169,7 +165,7 @@ public class LoggerImpl implements Logger {
             return null;
         }
         // 读取log的长度
-        ByteBuffer tmp = ByteBuffer.allocate(OF_SIZE);
+        ByteBuffer tmp = ByteBuffer.allocate(4);
         try {
             fc.position(position);
             fc.read(tmp);
