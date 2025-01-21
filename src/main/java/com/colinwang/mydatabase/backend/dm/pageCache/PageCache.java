@@ -11,14 +11,14 @@ import java.nio.channels.FileChannel;
 
 public interface PageCache {
 
-    public static final int PAGE_SIZE = 1 << 13;
+    public static final int PAGE_SIZE = 1 << 13; // 数据页默认大小为8K
 
     int newPage(byte[] initData);
     Page getPage(int pgno) throws Exception;
     void close();
     void release(Page page);
 
-    void truncateByBgno(int maxPgno);
+    void truncateByPgno(int maxPgno);
     int getPageNumber();
     void flushPage(Page pg);
 

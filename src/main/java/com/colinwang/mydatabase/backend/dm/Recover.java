@@ -64,7 +64,7 @@ public class Recover {
             maxPgno = 1;
         }
         // 截断无效页面
-        pc.truncateByBgno(maxPgno);
+        pc.truncateByPgno(maxPgno);
         System.out.println("Truncate to " + maxPgno + " pages.");
 
         redoTransactions(tm, lg, pc);
