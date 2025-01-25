@@ -68,7 +68,32 @@ public class DataItemImpl implements DataItem {
 
     @Override
     public void release() {
+        dm.releaseDataItem(this);
+    }
 
+    @Override
+    public void lock() {
+        wLock.lock();
+    }
+
+    @Override
+    public void unlock() {
+        wLock.unlock();
+    }
+
+    @Override
+    public void rLock() {
+        rLock.lock();
+    }
+
+    @Override
+    public void rUnLock() {
+        rLock.unlock();
+    }
+
+    @Override
+    public Page page() {
+        return pg;
     }
 
     @Override
@@ -78,11 +103,11 @@ public class DataItemImpl implements DataItem {
 
     @Override
     public byte[] getOldRaw() {
-        return new byte[0];
+        return oldRaw;
     }
 
     @Override
     public SubArray getRaw() {
-        return null;
+        return raw;
     }
 }
