@@ -11,7 +11,7 @@ import java.util.Arrays;
  * VM向上层抽象出entry
  * entry结构：
  * [XMIN] [XMAX] [data]
- * XMIN:创建该条记录（版本）的事务编号, XMAX:删除该条记录（版本）的事务编号
+ * XMIN:创建该条记录（版本）的事务编号, XMAX:删除（覆盖）该条记录（版本）的事务编号
  */
 public class Entry {
     private static final int OF_XMIN = 0;
