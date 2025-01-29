@@ -21,7 +21,7 @@ public class DataItemImpl implements DataItem {
     static final int OF_DATA = 3;
 
     private SubArray raw;
-    private byte[] oldRaw;
+    private byte[] oldRaw; // 用于事务回滚的数据备份
     private DataManagerImpl dm;
     private long uid;
     private Page pg;
